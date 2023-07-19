@@ -1,0 +1,63 @@
+<html>
+   <head><h1>Menu</h1>
+            <body background="https://previews.123rf.com/images/rraya/rraya2006/rraya200601460/149906476-bakery-products-background-cookies-cakes-donuts-vector-sketch-illustration-.jpg">   
+                               
+   </head>
+   
+   <table border="10" bordercolor="red" align="left" id="content" bg-color="#FFFF00"> 
+    <thead> 
+    <tr> 
+        
+        <th><h2>Item</h2></th>
+        <th><h2>price</h2></th> 
+    </tr> 
+    </thead> 
+    <tbody> 
+        {% for item in value %}  
+            <tr> 
+                <td><font color="black"><h3><font size="5">{{item[0]}}</h3></font></font></td>
+                <td><font color="black"><h3><font size="5"></font>{{item[1]}}</h3></font></font></td> 
+                
+                
+                 
+            </tr> 
+        {% endfor %} 
+    </tbody> 
+</table> 
+</body>
+
+<center><h2><u><font size="60">ORDER DETAILS</font></u></h2>
+
+<form action="/order" method="post" id="order">
+
+
+    <label><font size="40">name:</font></label>
+    <input type="text"    name="name" /><br><br>
+    <label><font size="40">year:</font></label>
+    <select input type="dropdown" name="year">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select><br><br>
+    <label><font size="40">item</font></label>
+    <select class="form-control" id="item" name='item'>
+        {%for i in range(0, len)%}
+        <option value={{dd[i]}}>{{dd[i]}}</option>
+        {%endfor%}
+    </select><br><br>
+                        <label><font size="70">quantity:</font></label>
+                        <input type="text"    name="quantity"/><br><br>
+                        
+                        
+                        <input type="submit" />
+             
+</form>
+
+
+</center>
+
+
+
+ </body>
+<html>
